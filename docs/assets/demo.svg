@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1060" height="520" viewBox="0 0 1060 520" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="15">
+  <!-- Terminal rendering of a real seqsafe session, abridged: every line shown
+       is verbatim from `seqsafe scan examples/poisoned.log` on 2026-07-13;
+       elided findings are marked as such. -->
+  <rect width="1060" height="520" rx="10" fill="#1c2128"/>
+  <rect width="1060" height="34" rx="10" fill="#2d333b"/>
+  <rect y="24" width="1060" height="10" fill="#2d333b"/>
+  <circle cx="20" cy="17" r="6" fill="#f47067"/>
+  <circle cx="40" cy="17" r="6" fill="#e0b543"/>
+  <circle cx="60" cy="17" r="6" fill="#57ab5a"/>
+  <text x="530" y="22" text-anchor="middle" fill="#909dab">seqsafe — what was that file about to do to your terminal?</text>
+
+  <g fill="#adbac7">
+    <text x="24" y="66"><tspan fill="#6cb6ff">$</tspan> seqsafe scan examples/poisoned.log</text>
+    <text x="24" y="96"><tspan fill="#f47067">L2 @87  [critical] clipboard (clipboard-write)</tspan> stripped  ⟨ESC⟩]52;c;Y3VybCAtcyBodHRw…</text>
+    <text x="24" y="122"><tspan fill="#e0b543">L3 @148 [high] title (title-set)</tspan> stripped  ⟨ESC⟩]0;security scan passed⟨BEL⟩</text>
+    <text x="24" y="148"><tspan fill="#909dab">L4 @234 [medium] cursor (cursor-move)</tspan> stripped  ⟨ESC⟩[2A</text>
+    <text x="24" y="174"><tspan fill="#909dab">L4 @238 [medium] screen (erase-line)</tspan> stripped  ⟨ESC⟩[2K</text>
+    <text x="24" y="200"><tspan fill="#909dab">L5 @338 [medium] hyperlink (unsafe-link)</tspan> stripped  ⟨ESC⟩]8;;file:///etc/passwd⟨ESC⟩\</text>
+    <text x="24" y="226"><tspan fill="#e0b543">L6 @398 [high] charset (charset-designate)</tspan> stripped  ⟨ESC⟩(0</text>
+    <text x="24" y="252"><tspan fill="#e0b543">L7 @453 [high] query (device-status-report)</tspan> stripped  ⟨0x9B⟩6n</text>
+    <text x="24" y="276" fill="#768390">        … 4 more findings elided …</text>
+    <text x="24" y="302">11 finding(s): <tspan fill="#f47067">1 critical</tspan>, <tspan fill="#e0b543">4 high</tspan>, 6 medium, 0 low; 7 sequence(s) kept, 11 stripped</text>
+    <text x="24" y="326" fill="#768390">exit status 1 — pipeline gate tripped</text>
+
+    <text x="24" y="368"><tspan fill="#6cb6ff">$</tspan> seqsafe clean examples/poisoned.log</text>
+    <text x="24" y="398">release notes v2.1 <tspan fill="#57ab5a" font-weight="bold">[verified]</tspan>   <tspan fill="#768390"># colors kept, clipboard write gone</tspan></text>
+    <text x="24" y="424">All dependency checks <tspan fill="#57ab5a">passed</tspan>.   <tspan fill="#768390"># title change gone</tspan></text>
+    <text x="24" y="450">reviewed by maintainer (do not run this)   <tspan fill="#768390"># overwrite trick neutralized</tspan></text>
+    <text x="24" y="476">docs: <tspan fill="#6cb6ff" text-decoration="underline">the manual</tspan> | mirror: backup copy   <tspan fill="#768390"># https link kept, file:// stripped</tspan></text>
+    <text x="24" y="504" fill="#768390">$ _</text>
+  </g>
+</svg>

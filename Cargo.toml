@@ -1,0 +1,17 @@
+[package]
+name = "seqsafe"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.75"
+description = "Sanitizes untrusted terminal output: keeps colors and safe styling, strips clipboard writes, title changes, queries and escape-injection tricks."
+license = "MIT"
+repository = "https://github.com/JaydenCJ/seqsafe"
+keywords = ["ansi", "terminal", "security", "sanitizer", "escape"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+# None. seqsafe is std-only: a security filter should not widen the supply chain it guards.
+
+[profile.release]
+strip = true
+lto = true
